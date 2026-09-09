@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { SideVisuals } from "@/components/layout/side-visuals";
 import { ThemeScript } from "@/components/theme/theme-script";
 import { createMetadata, personJsonLd } from "@/lib/seo";
 import "./globals.css";
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="flex min-h-full flex-col">
         <JsonLd data={personJsonLd()} />
+        <SideVisuals />
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />

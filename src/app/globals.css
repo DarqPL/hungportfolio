@@ -150,6 +150,86 @@
   .light .theme-toggle__moon {
     display: none;
   }
+  .side-visual {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: calc((100vw - 72rem) / 2);
+    min-width: 220px;
+    max-width: 420px;
+    overflow: hidden;
+    opacity: 0.62;
+  }
+  .light .side-visual {
+    opacity: 0.52;
+  }
+  .side-visual--left {
+    left: 0;
+    mask-image: linear-gradient(to right, black 0%, black 68%, transparent 100%);
+  }
+  .side-visual--right {
+    right: 0;
+    mask-image: linear-gradient(to left, black 0%, black 68%, transparent 100%);
+  }
+  .side-visual__track {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 280vh;
+    will-change: transform;
+  }
+  .side-visual__track--left {
+    animation: side-visual-up 76s linear infinite;
+  }
+  .side-visual__track--right {
+    animation: side-visual-down 88s linear infinite;
+    transform: translate3d(0, -50%, 0);
+  }
+  .side-visual__sequence {
+    position: relative;
+    flex: 0 0 140vh;
+    min-height: 140vh;
+  }
+  .side-visual__image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: opacity 300ms ease;
+    user-select: none;
+  }
+  .side-visual__image--dark {
+    opacity: 1;
+    filter: brightness(1.35) contrast(1.08);
+  }
+  .side-visual__image--light {
+    opacity: 0;
+    filter: brightness(1.02) contrast(0.98);
+  }
+  .light .side-visual__image--dark {
+    opacity: 0;
+  }
+  .light .side-visual__image--light {
+    opacity: 1;
+  }
+  @keyframes side-visual-up {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+  @keyframes side-visual-down {
+    from {
+      transform: translate3d(0, -50%, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -161,6 +241,12 @@
       animation-iteration-count: 1 !important;
       scroll-behavior: auto !important;
       transition-duration: 0.01ms !important;
+    }
+    .side-visual__track,
+    .side-visual__track--left,
+    .side-visual__track--right {
+      animation: none !important;
+      transform: translate3d(0, 0, 0) !important;
     }
   }
 }
