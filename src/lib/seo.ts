@@ -15,11 +15,13 @@ export const defaultDescription =
 
 export function createMetadata({
   title,
+  socialTitle,
   description = defaultDescription,
   path = "/",
   image = "/opengraph-image",
 }: {
-  title?: string;
+  title?: Metadata["title"];
+  socialTitle?: string;
   description?: string;
   path?: string;
   image?: string;
@@ -37,7 +39,7 @@ export function createMetadata({
     authors: [{ name: profile.asciiName, url: SITE_URL }],
     creator: profile.asciiName,
     openGraph: {
-      title: title ?? `${profile.asciiName} — Backend & Web3 Developer`,
+      title: socialTitle ?? `${profile.asciiName} — Backend & Web3 Developer`,
       description,
       url,
       siteName: `${profile.asciiName} Portfolio`,
@@ -54,7 +56,7 @@ export function createMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: title ?? `${profile.asciiName} — Backend & Web3 Developer`,
+      title: socialTitle ?? `${profile.asciiName} — Backend & Web3 Developer`,
       description,
       images: [imageUrl],
     },

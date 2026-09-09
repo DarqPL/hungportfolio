@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { JsonLd } from "@/components/json-ld";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { createMetadata, personJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,10 +16,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Huynh Anh Hung Portfolio",
-  description: "Personal portfolio built with Next.js, Tailwind CSS, MDX, and shadcn/ui.",
-};
+export const metadata: Metadata = createMetadata({
+  title: {
+    default: "Huynh Anh Hung — Backend & Web3 Developer",
+    template: "%s | Huynh Anh Hung",
+  },
+  socialTitle: "Huynh Anh Hung — Backend & Web3 Developer",
+});
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -23,7 +30,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="vi"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <JsonLd data={personJsonLd()} />
+        <SiteHeader />
+        <div className="flex-1">{children}</div>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
