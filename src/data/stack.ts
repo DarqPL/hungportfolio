@@ -13,7 +13,12 @@ export const stackGroups: StackGroup[] = [
   {
     id: "backend",
     label: "Backend",
-    items: ["Spring Boot", "REST APIs"],
+    items: ["Spring Boot", "Spring Framework", "Node.js", "REST APIs"],
+  },
+  {
+    id: "database",
+    label: "Database",
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
   },
   {
     id: "frontend",
