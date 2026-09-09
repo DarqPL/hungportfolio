@@ -1,21 +1,26 @@
 export type StackIconKey =
   | "agent"
   | "bot"
-  | "braces"
-  | "cat"
-  | "cloud"
-  | "coffee"
-  | "container"
-  | "database"
+  | "docker"
+  | "gemini"
   | "git"
-  | "hexagon"
-  | "leaf"
+  | "github"
+  | "javascript"
   | "linux"
+  | "mongodb"
+  | "mysql"
   | "network"
-  | "sparkle"
-  | "terminal"
-  | "triangle"
-  | "waves";
+  | "nextjs"
+  | "nodejs"
+  | "opencode"
+  | "openjdk"
+  | "postgresql"
+  | "react"
+  | "redis"
+  | "spring"
+  | "tailwind"
+  | "typescript"
+  | "vercel";
 
 export type StackItem = {
   name: string;
@@ -33,17 +38,17 @@ export const stackGroups: StackGroup[] = [
     id: "languages",
     label: "Languages",
     items: [
-      { name: "Java", icon: "coffee" },
-      { name: "TypeScript", icon: "braces" },
+      { name: "Java", icon: "openjdk" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "TypeScript", icon: "typescript" },
     ],
   },
   {
     id: "backend",
     label: "Backend",
     items: [
-      { name: "Spring Boot", icon: "leaf" },
-      { name: "Spring Framework", icon: "leaf" },
-      { name: "Node.js", icon: "hexagon" },
+      { name: "Spring Framework", icon: "spring" },
+      { name: "Node.js", icon: "nodejs" },
       { name: "REST APIs", icon: "network" },
     ],
   },
@@ -51,19 +56,19 @@ export const stackGroups: StackGroup[] = [
     id: "database",
     label: "Database",
     items: [
-      { name: "PostgreSQL", icon: "database" },
-      { name: "MySQL", icon: "database" },
-      { name: "MongoDB", icon: "leaf" },
-      { name: "Redis", icon: "waves" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "MySQL", icon: "mysql" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "Redis", icon: "redis" },
     ],
   },
   {
     id: "frontend",
     label: "Frontend",
     items: [
-      { name: "Next.js", icon: "triangle" },
-      { name: "React", icon: "network" },
-      { name: "Tailwind CSS", icon: "waves" },
+      { name: "Next.js", icon: "nextjs" },
+      { name: "React", icon: "react" },
+      { name: "Tailwind CSS", icon: "tailwind" },
     ],
   },
   {
@@ -75,14 +80,14 @@ export const stackGroups: StackGroup[] = [
     id: "workflow",
     label: "Workflow",
     items: [
-      { name: "Gemini", icon: "sparkle" },
+      { name: "Gemini", icon: "gemini" },
       { name: "ChatGPT", icon: "bot" },
-      { name: "OpenCode", icon: "terminal" },
+      { name: "OpenCode", icon: "opencode" },
       { name: "Agent Skills", icon: "agent" },
       { name: "Git", icon: "git" },
-      { name: "GitHub", icon: "cat" },
-      { name: "Docker", icon: "container" },
-      { name: "Vercel", icon: "triangle" },
+      { name: "GitHub", icon: "github" },
+      { name: "Docker", icon: "docker" },
+      { name: "Vercel", icon: "vercel" },
       { name: "Linux", icon: "linux" },
     ],
   },
