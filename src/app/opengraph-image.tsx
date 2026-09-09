@@ -32,7 +32,7 @@ export default function OpenGraphImage() {
           </div>
         </div>
 
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: -5, lineHeight: 1 }}>
             {profile.asciiName}
           </div>
