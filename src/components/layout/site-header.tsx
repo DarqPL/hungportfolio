@@ -16,7 +16,7 @@ export function SiteHeader() {
           aria-label="Huynh Anh Hung home"
         >
           <span className="grid size-8 place-items-center border border-border bg-card font-mono text-xs font-semibold text-foreground transition-colors group-hover:border-accent">
-            H/A
+            AH
           </span>
           <span className="hidden font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground sm:inline">
             DarqPL

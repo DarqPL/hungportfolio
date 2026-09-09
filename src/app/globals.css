@@ -82,6 +82,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --status-background: oklch(0.18 0.06 155 / 0.28);
+  --status-border: oklch(0.7 0.15 155 / 0.35);
+  --status-dot: oklch(0.72 0.18 155);
+  --status-text: oklch(0.88 0.08 155);
 }
 
 .light {
@@ -104,6 +108,10 @@
   --border: oklch(0.84 0 0);
   --input: oklch(0.84 0 0);
   --ring: oklch(0.45 0.11 155);
+  --status-background: oklch(0.93 0.08 155);
+  --status-border: oklch(0.62 0.15 155 / 0.6);
+  --status-dot: oklch(0.47 0.16 155);
+  --status-text: oklch(0.25 0.11 155);
 }
 
 @layer base {
@@ -122,17 +130,25 @@
     background: color-mix(in oklch, var(--accent), transparent 65%);
     color: var(--foreground);
   }
+  .status-badge {
+    background: var(--status-background);
+    border-color: var(--status-border);
+    color: var(--status-text);
+  }
+  .status-badge__dot {
+    background: var(--status-dot);
+  }
   .theme-toggle__sun {
-    display: block;
+    display: none;
   }
   .theme-toggle__moon {
-    display: none;
+    display: block;
   }
   .light .theme-toggle__sun {
-    display: none;
+    display: block;
   }
   .light .theme-toggle__moon {
-    display: block;
+    display: none;
   }
   @media (prefers-reduced-motion: reduce) {
     html {

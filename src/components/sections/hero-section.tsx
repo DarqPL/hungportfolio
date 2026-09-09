@@ -11,8 +11,8 @@ export function HeroSection() {
       <div className="grid gap-10 lg:grid-cols-[1fr_320px] lg:items-end">
         <div className="space-y-8">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center gap-2 border border-emerald-400/25 bg-emerald-400/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.18em] text-emerald-200">
-              <span className="size-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
+            <span className="inline-flex items-center gap-2 border px-3 py-1 font-mono text-xs uppercase tracking-[0.18em] status-badge">
+              <span className="size-1.5 rounded-full status-badge__dot" aria-hidden="true" />
               {profile.status}
             </span>
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
