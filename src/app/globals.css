@@ -84,6 +84,28 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+.light {
+  color-scheme: light;
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.12 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0 0);
+  --primary: oklch(0.16 0 0);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.93 0 0);
+  --secondary-foreground: oklch(0.16 0 0);
+  --muted: oklch(0.94 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.54 0.13 155);
+  --accent-foreground: oklch(0.27 0.1 155);
+  --destructive: oklch(0.55 0.2 25);
+  --border: oklch(0.84 0 0);
+  --input: oklch(0.84 0 0);
+  --ring: oklch(0.45 0.11 155);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -99,6 +121,18 @@
   ::selection {
     background: color-mix(in oklch, var(--accent), transparent 65%);
     color: var(--foreground);
+  }
+  .theme-toggle__sun {
+    display: block;
+  }
+  .theme-toggle__moon {
+    display: none;
+  }
+  .light .theme-toggle__sun {
+    display: none;
+  }
+  .light .theme-toggle__moon {
+    display: block;
   }
   @media (prefers-reduced-motion: reduce) {
     html {
