@@ -16,7 +16,7 @@ const SIDE_VISUALS: Record<Theme, Record<Side, string>> = {
 
 export function SideVisuals() {
   return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 hidden overflow-hidden 2xl:block">
+    <div aria-hidden="true" className="side-visual-root">
       <VisualRail side="left" />
       <VisualRail side="right" />
     </div>
@@ -42,7 +42,7 @@ function VisualSequence({ side }: { side: Side }) {
         src={SIDE_VISUALS.dark[side]}
         alt=""
         fill
-        sizes="(min-width: 1536px) 420px, 0px"
+        sizes="(min-width: 1920px) 380px, (min-width: 1440px) 224px, (min-width: 768px) 96px, 0px"
         loading="lazy"
         decoding="async"
         priority={false}
@@ -52,7 +52,7 @@ function VisualSequence({ side }: { side: Side }) {
         src={SIDE_VISUALS.light[side]}
         alt=""
         fill
-        sizes="(min-width: 1536px) 420px, 0px"
+        sizes="(min-width: 1920px) 380px, (min-width: 1440px) 224px, (min-width: 768px) 96px, 0px"
         loading="lazy"
         decoding="async"
         priority={false}
