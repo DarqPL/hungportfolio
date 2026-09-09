@@ -13,6 +13,20 @@ export function absoluteUrl(path = "/") {
 export const defaultDescription =
   "Backend developer based in Ho Chi Minh City, focused on Java, Spring Boot, backend systems, and Web3 development.";
 
+export const seoKeywords = [
+  "Huynh Anh Hung",
+  "Huỳnh Ánh Hưng",
+  "HuynhAnhHung",
+  "DarqPL",
+  "Java Developer",
+  "Spring Boot Developer",
+  "Backend Developer",
+  "Web3 Developer",
+  "Software Developer Vietnam",
+  "Backend Developer Vietnam",
+  "Java Developer Vietnam",
+];
+
 export function createMetadata({
   title,
   socialTitle,
@@ -33,11 +47,16 @@ export function createMetadata({
     metadataBase: new URL(SITE_URL),
     title,
     description,
+    keywords: seoKeywords,
     alternates: {
       canonical: url,
     },
     authors: [{ name: profile.asciiName, url: SITE_URL }],
     creator: profile.asciiName,
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+    },
     openGraph: {
       title: socialTitle ?? `${profile.asciiName} — Backend & Web3 Developer`,
       description,
