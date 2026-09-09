@@ -33,6 +33,16 @@ export const stackGroups: StackGroup[] = [
   {
     id: "workflow",
     label: "Workflow",
-    items: ["Git", "GitHub"],
+    items: [
+      "Gemini",
+      "ChatGPT",
+      "OpenCode",
+      "Agent Skills",
+      "Git",
+      "GitHub",
+      "Docker",
+      "Vercel",
+      "Linux",
+    ],
   },
 ];
