@@ -1,4 +1,5 @@
 import { Section } from "@/components/layout/section";
+import { StackIcon } from "@/components/stack/stack-icon";
 import { stackGroups } from "@/data/stack";
 
 export function StackSection() {
@@ -21,8 +22,9 @@ export function StackSection() {
             </h3>
             <ul className="flex flex-wrap gap-x-4 gap-y-2">
               {group.items.map((item) => (
-                <li key={item} className="text-sm leading-6 text-foreground">
-                  {item}
+                <li key={item.name} className="group inline-flex items-center gap-2 text-sm leading-6 text-foreground">
+                  <StackIcon icon={item.icon} label={item.name} />
+                  <span>{item.name}</span>
                 </li>
               ))}
             </ul>

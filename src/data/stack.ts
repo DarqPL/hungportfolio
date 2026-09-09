@@ -1,48 +1,89 @@
+export type StackIconKey =
+  | "agent"
+  | "bot"
+  | "braces"
+  | "cat"
+  | "cloud"
+  | "coffee"
+  | "container"
+  | "database"
+  | "git"
+  | "hexagon"
+  | "leaf"
+  | "linux"
+  | "network"
+  | "sparkle"
+  | "terminal"
+  | "triangle"
+  | "waves";
+
+export type StackItem = {
+  name: string;
+  icon: StackIconKey;
+};
+
 export type StackGroup = {
   id: string;
   label: string;
-  items: string[];
+  items: StackItem[];
 };
 
 export const stackGroups: StackGroup[] = [
   {
     id: "languages",
     label: "Languages",
-    items: ["Java", "TypeScript"],
+    items: [
+      { name: "Java", icon: "coffee" },
+      { name: "TypeScript", icon: "braces" },
+    ],
   },
   {
     id: "backend",
     label: "Backend",
-    items: ["Spring Boot", "Spring Framework", "Node.js", "REST APIs"],
+    items: [
+      { name: "Spring Boot", icon: "leaf" },
+      { name: "Spring Framework", icon: "leaf" },
+      { name: "Node.js", icon: "hexagon" },
+      { name: "REST APIs", icon: "network" },
+    ],
   },
   {
     id: "database",
     label: "Database",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+    items: [
+      { name: "PostgreSQL", icon: "database" },
+      { name: "MySQL", icon: "database" },
+      { name: "MongoDB", icon: "leaf" },
+      { name: "Redis", icon: "waves" },
+    ],
   },
   {
     id: "frontend",
     label: "Frontend",
-    items: ["Next.js", "React", "Tailwind CSS"],
+    items: [
+      { name: "Next.js", icon: "triangle" },
+      { name: "React", icon: "network" },
+      { name: "Tailwind CSS", icon: "waves" },
+    ],
   },
   {
     id: "web3",
     label: "Web3",
-    items: ["Web3 fundamentals"],
+    items: [{ name: "Web3 fundamentals", icon: "network" }],
   },
   {
     id: "workflow",
     label: "Workflow",
     items: [
-      "Gemini",
-      "ChatGPT",
-      "OpenCode",
-      "Agent Skills",
-      "Git",
-      "GitHub",
-      "Docker",
-      "Vercel",
-      "Linux",
+      { name: "Gemini", icon: "sparkle" },
+      { name: "ChatGPT", icon: "bot" },
+      { name: "OpenCode", icon: "terminal" },
+      { name: "Agent Skills", icon: "agent" },
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "cat" },
+      { name: "Docker", icon: "container" },
+      { name: "Vercel", icon: "triangle" },
+      { name: "Linux", icon: "linux" },
     ],
   },
 ];
