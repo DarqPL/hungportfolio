@@ -13,15 +13,15 @@ export function StackSection() {
       title="Technology Stack"
       description="Grouped without artificial proficiency scores."
     >
-      <div className="grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+      <div className="divide-y divide-border border-y border-border">
         {stackGroups.map((group, index) => (
-          <article key={group.id} className="bg-card p-5">
-            <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          <article key={group.id} className="grid gap-4 py-5 sm:grid-cols-[180px_1fr] sm:items-start">
+            <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
               {String(index + 1).padStart(2, "0")} / {group.label}
-            </p>
-            <ul className="mt-5 space-y-2">
+            </h3>
+            <ul className="flex flex-wrap gap-x-4 gap-y-2">
               {group.items.map((item) => (
-                <li key={item} className="text-sm text-foreground">
+                <li key={item} className="text-sm leading-6 text-foreground">
                   {item}
                 </li>
               ))}
